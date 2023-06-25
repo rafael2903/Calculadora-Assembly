@@ -1,0 +1,3 @@
+msglen: equ $ - msg
+
+x86  e x86_64
