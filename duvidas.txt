@@ -1,3 +1,15 @@
 msglen: equ $ - msg
 
 x86  e x86_64
+
+
+passagem por valor pilha
+
+
+syscall x int 0x80
+
+
+tamanho do nome
+
+
+clear screen in .rodata
