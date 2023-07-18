@@ -7,7 +7,7 @@ section .data
   welcome2_msg2_len equ $ - welcome2_msg2
   question_msg  db  "Vai trabalhar com 16 ou 32 bits? (digite 0 para 16, e 1 para 32):", 10
   question_msg_len equ $ - question_msg
-  menu_msg   db     "ESCOLHA UMA OPÇÃO: ",10,"- 1: SOMA ",10,"- 2: SUBTRACAO ",10,"- 3: MULTIPLICACAO ",10,"- 4: DIVISAO ",10,"- 5: EXPONENCIACAO ",10,"- 6: MOD ",10,"- 7: SAIR", 10
+  menu_msg  db  "ESCOLHA UMA OPÇÃO: ",10,"- 1: SOMA ",10,"- 2: SUBTRACAO ",10,"- 3: MULTIPLICACAO ",10,"- 4: DIVISAO ",10,"- 5: EXPONENCIACAO ",10,"- 6: MOD ",10,"- 7: SAIR", 10
   menu_msg_len equ $ - menu_msg
   first_operand_msg db "Digite o primeiro operando: ", 10
   first_operand_msg_len equ $ - first_operand_msg
@@ -81,19 +81,19 @@ menu:
   call  read
   add   esp, 8
 
-  cmp   byte [menu_option],'1'
+  cmp   byte [menu_option], '1'
   je    sum
-  cmp   byte [menu_option],'2'
+  cmp   byte [menu_option], '2'
   je    subtraction
-  cmp   byte [menu_option],'3'
+  cmp   byte [menu_option], '3'
   je    multiplication
-  cmp   byte [menu_option],'4'
+  cmp   byte [menu_option], '4'
   je    division
-  cmp   byte [menu_option],'5'
+  cmp   byte [menu_option], '5'
   je    exp
-  cmp   byte [menu_option],'6'
+  cmp   byte [menu_option], '6'
   je    mod
-  cmp   byte [menu_option],'7'
+  cmp   byte [menu_option], '7'
   jne   menu
 
   ; exit
@@ -186,17 +186,17 @@ string_number_to_integer_16:
   mov   esi, [ebp + 8]        ; ecx = str
   mov   ecx, [ebp + 12]       ; ecx = str_len
   dec   ecx
-  mov   dx, 0               ; valor atual
-  mov   [ebp - 2], word 10  ; base
-  mov   [ebp - 4], word 0   ; resultado final
-  mov   [ebp - 6], word 1   ; sinal
+  mov   dx, 0                 ; valor atual
+  mov   [ebp - 2], word 10    ; base
+  mov   [ebp - 4], word 0     ; resultado final
+  mov   [ebp - 6], word 1     ; sinal
 
-  mov   dl, [esi]           ; dl = str[i]
+  mov   dl, [esi]             ; dl = str[i]
   cmp   dl, "-"
   jne   s2n16_loop
   inc   esi
   dec   ecx
-  neg   word [ebp - 6]     ; sinal = -1
+  neg   word [ebp - 6]        ; sinal = -1
   s2n16_loop:
     mov   dx, 0
     mov   dl, [esi]
@@ -237,14 +237,13 @@ string_number_to_integer_16:
 ; int read_int()
 read_int:
   enter 12, 0
-  ; mov   dword [ebp - 11], 0
   lea   esi, [esp]
   push  esi
   push  12
   call  read
   push  eax ; quantidade de caracteres lidos
   push  esi ; endereço do buffer
-  cmp  byte [precision], '0'
+  cmp   byte [precision], '0'
   je    rdI16
   call  string_number_to_integer_32
   jmp   rdI_end
@@ -321,13 +320,11 @@ print_int:
 
 
   continue2:
-    ; dec ebx
     ; Prepara para inverter a string
     mov edi, esi
     lea esi, [esi + ebx]
     dec esi
 
-  ; PutStr esi
   invert_loop:
     cmp edi, esi
     jge print_result

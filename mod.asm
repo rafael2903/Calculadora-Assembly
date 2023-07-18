@@ -26,7 +26,7 @@ mod:
   je    mod16
 
 mod32:
-  call divide32
+  call  divide32
   mov   esi, edx
   push  result_msg
   push  result_msg_len
@@ -37,7 +37,7 @@ mod32:
   jmp   end
 
 mod16:
-  call divide16
+  call  divide16
   mov   si, dx
   push  result_msg
   push  result_msg_len

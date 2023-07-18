@@ -48,8 +48,8 @@ exp32:
   jnz   overflow
   jmp   exp32_continue
   compare_negative32:
-    cmp edx, -1 ; Se eax for negativo, edx deve ser -1
-    jne  overflow
+    cmp   edx, -1 ; Se eax for negativo, edx deve ser -1
+    jne   overflow
   jmp   exp32_continue
 
   exp32_zero:
@@ -93,8 +93,8 @@ exp16:
   jnz   overflow
   jmp   exp16_continue
   compare_negative16:
-    cmp dx, -1 ; Se ax for negativo, dx deve ser -1
-    jne  overflow
+    cmp   dx, -1 ; Se ax for negativo, dx deve ser -1
+    jne   overflow
   jmp   exp16_continue
 
   exp16_zero:

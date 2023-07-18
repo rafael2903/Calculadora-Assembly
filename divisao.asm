@@ -26,7 +26,7 @@ division:
   je    div16
 
 div32:
-  call divide32
+  call  divide32
   mov   esi, eax
   push  result_msg
   push  result_msg_len
@@ -37,7 +37,7 @@ div32:
   jmp   end
 
 div16:
-  call divide16
+  call  divide16
   mov   si, ax
   push  result_msg
   push  result_msg_len

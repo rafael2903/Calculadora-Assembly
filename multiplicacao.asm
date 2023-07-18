@@ -37,8 +37,8 @@ mul32:
   jnz   overflow
   jmp   continue32
   compare_negative32:
-    cmp edx, -1 ; Se eax for negativo, edx deve ser -1
-    jne  overflow
+    cmp   edx, -1 ; Se eax for negativo, edx deve ser -1
+    jne   overflow
   continue32:
     mov   esi, eax
     push  result_msg
