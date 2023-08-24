@@ -1,8 +1,8 @@
-# Trabalho 2 de Software Básico 2023.1 - Calculadora IA-32
+# Calculadora IA-32 - Trabalho 2 de Software Básico 2023.1
 
 ## Descrição do Projeto
 
-Projeto desenvolvido para a disciplina de Software Básico da Universidade de Brasília (UnB) no semestre 1/2023. O projeto consiste em um programa em assembly IA-32 que representa uma calculadora em que é possível realizar as operações de SOMA, SUBTRAÇÃO, MULTIPLICAÇÃO, DIVISÃO, EXPONENCIAÇÃO e MOD (resto da divisão).
+Projeto desenvolvido para a disciplina de Software Básico da Universidade de Brasília (UnB) no semestre 1/2023. O projeto consiste em um programa em assembly IA-32 de uma calculadora em que é possível realizar as operações de SOMA, SUBTRAÇÃO, MULTIPLICAÇÃO, DIVISÃO, EXPONENCIAÇÃO e MOD (resto da divisão).
 
 ## Alunos
 
